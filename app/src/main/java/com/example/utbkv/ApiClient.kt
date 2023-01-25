@@ -8,14 +8,14 @@ class ApiClient {
         private const val BASE_URL = "https://opent2.com/qtcreator/"
         private var retrofit: Retrofit? = null
 
-        fun getClient(): Retrofit? {
+        fun getClient(): Retrofit {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
             }
-            return retrofit
+            return retrofit!!
         }
     }
 }
